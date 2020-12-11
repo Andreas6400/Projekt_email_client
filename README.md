@@ -6,7 +6,8 @@ Ein E-Mail-Client, der eine Mail schickt, sobald sich der 1. Platz der Bundeslig
 
 
 Hinweise zum Starten des Programms
-•	Sender und Empfänger-Mail ändern
-•	Port ändern Passwort raussuchen und wissen
-•	Dem PC/Computer den Befehl geben jeden Montagmorgen das Skript zu starten
+
+- Sender und Empfänger-Mail ändern
+-	Port ändern Passwort raussuchen und wissen
+-	Dem PC/Computer den Befehl geben jeden Montagmorgen das Skript zu starten
 
