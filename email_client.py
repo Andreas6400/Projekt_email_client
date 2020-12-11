@@ -76,21 +76,21 @@ tabelle = bundesliga_source.find("div", {"class": "container tablepage-container
 
 # Bestimmter Zeitpunkt wenn 1. Platz ändert
 #
-body = bundesliga_source.find("tbody")
-erster = body.find("span", {"class": "d-none d-lg-inline"})
+body = bundesliga_source.find("tbody") # sucht den Abschnitt tbody und speichert in der Variable body
+erster = body.find("span", {"class": "d-none d-lg-inline"})# sucht in dem body nach dem span mit der angegebnen class
 path = Path("ersterPlatz.txt")
-if path.is_file():
-    with open("ersterPlatz.txt","r+") as datei:
-        bisherigerErster = datei.read()
-        if bisherigerErster == str(erster.contents):
-            print("Nichts neues!")
-            exit()
+if path.is_file(): # Prüfung ob es die Datei existiert 
+    with open("ersterPlatz.txt","r+") as datei: # Öffnen von Datei
+        bisherigerErster = datei.read() # lese den Inhalt der Datei uns speichert in Variable 
+        if bisherigerErster == str(erster.contents): # Prüfe ob Inhalt der Datei mit dem Inhalt der Website übreinstimmmt
+            print("Nichts neues!") # Ausgabe wenn sich der 1. Platz nicht ändert
+            exit() # Programm beenden
         else:
-            datei.write(str(erster.contents))
-            datei.close()
-            emailSenden()
+            datei.write(str(erster.contents)) # Überschreiben der Datei mit dem neuen ersten Platz
+            datei.close() # Datei schließen und speichern
+            emailSenden() # Die Funktion emailSenden wird aufgerufen und durch geführt
 else:
-    with open("ersterPlatz.txt","w") as datei:
-        datei.write(str(erster.contents))
-        datei.close()
-        emailSenden()
+    with open("ersterPlatz.txt","w") as datei: # Erstellen einer Datei
+        datei.write(str(erster.contents)) # Schreibe den 1. Platz rein
+        datei.close() # Schließe und speichere die Datei
+        emailSenden() # Die Funktion emailSenden wird aufgerufen und durch geführt
