@@ -20,8 +20,8 @@ def parseSourceCode(my_url):
 
 def emailSenden():
     # Definition der Sender-, Empfängeremail und Passwort
-    sender_email = "andreas@brossmerhoehe.de"
-    empfaenger_email = "andreas@brossmerhoehe.de"
+    sender_email = "Sender Email eingeben"
+    empfaenger_email = "Empfänger Email eingeben"
     password = input("Gebe dein Passwort ein und drücke Enter: ")
 
     message = MIMEMultipart("alternative")
@@ -63,7 +63,7 @@ def emailSenden():
     #---Stellen Sie eine sichere Verbindung zum Server her und senden Sie eine E-Mail---
 
     #Verwenden Sie ihren E-Mail-Anbieter mit Port HIER GEWUENSCHTEN SMTP RAUSSUCHEN
-    session = smtplib.SMTP('smtp.brossmerhoehe.de', 25) 
+    session = smtplib.SMTP('Email-Anbieter eingeben', "Port") # Neuer Port und Email-Anbieter eingeben
     session.starttls() #Sicherheit aktivieren
     session.login(sender_email, password) #Login mit Mail-ID und Passwort
     text = message.as_string()
